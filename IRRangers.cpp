@@ -20,7 +20,7 @@ IRRangers::IRRangers() {
 	setServoAngle(0);
 	this->setMinScanAngle(0);
 	this->setMaxScanAngle(180);
-
+	currentAngle = minAngle;
 	setScanRate(90);
 
 	Serial.print("Scan rate : ");
@@ -95,7 +95,8 @@ void IRRangers::scan2(){
 		static unsigned long pTime;
 		unsigned long  time = millis();
 
-
+		Serial.print("Time ");
+		Serial.println(time);
 
 			if ( (time - pTime) >=40){
 						currentAngle += DeltaAnglePerUpdate;
@@ -107,6 +108,7 @@ void IRRangers::scan2(){
 							currentAngle = minAngle;
 							DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
 						}
+						Serial.println("Hi!");
 
 						scanIndex++;
 
@@ -117,8 +119,8 @@ void IRRangers::scan2(){
 					setServoAngle(currentAngle);
 					pTime = time;
 
-					this->data[scanIndex].leftEncoderCount = aiRobot.getLeftEncoderCount();
-					this->data[scanIndex].rightEncocerCount = aiRobot.getRightEncoderCount();
+				//	this->data[scanIndex].leftEncoderCount = aiRobot.getLeftEncoderCount();
+				//	this->data[scanIndex].rightEncocerCount = aiRobot.getRightEncoderCount();
 
 			}
 
@@ -156,7 +158,7 @@ void IRRangers::scan()
 		setServoAngle(currentAngle);
 		scanIndex++;
 
-		if (scanIndex > maxScans){
+		if (scanIndex > (maxScans -1)){
 			scanIndex = 0;
 		}
 
