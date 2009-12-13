@@ -20,20 +20,6 @@ for (;;);
 
 }
 
-Servo LFservo;
-Servo RFServo;
-Servo LBServo;
-Servo RBServo;
-
-void setServoAngle(int angle)
-	{
-	RFServo.write(180-angle);
-	LFservo.write(angle);
-	LBServo.write(180-angle);
-	RBServo.write(angle);
-
-	}
-
 
 int main(void)
 {
@@ -52,7 +38,7 @@ int main(void)
 
 		//}
 		while(1==1)		{
-			scanner.scan();
+			scanner.scan2();
 			_delay_ms(1);
 		}
 

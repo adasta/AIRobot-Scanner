@@ -92,41 +92,40 @@ void IRRangers::ContinousScan()
 }
 //
 void IRRangers::scan2(){
-		static unsigned long pTime;
-		unsigned long  time = millis();
 
-		Serial.print("Time ");
-		Serial.println(time);
+	 static int time ;
+	 time++;
 
-			if ( (time - pTime) >=40){
-						currentAngle += DeltaAnglePerUpdate;
-						if (currentAngle >= maxAngle) {
-							currentAngle = maxAngle;
-							DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
-						}
-						if (currentAngle <=minAngle ){
-							currentAngle = minAngle;
-							DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
-						}
-						Serial.println("Hi!");
+	if  ( time >= 40){  //Update Scan Angle
+		currentAngle += DeltaAnglePerUpdate;
+		if (currentAngle >= maxAngle) {
+			currentAngle = maxAngle;
+			DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
+		}
+		if (currentAngle <=minAngle ){
+			currentAngle = minAngle;
+			DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
+		}
 
-						scanIndex++;
 
-						if (scanIndex > (maxScans-1)){
-							scanIndex = 0;
-						}
+		setServoAngle(currentAngle);
 
-					setServoAngle(currentAngle);
-					pTime = time;
 
-				//	this->data[scanIndex].leftEncoderCount = aiRobot.getLeftEncoderCount();
-				//	this->data[scanIndex].rightEncocerCount = aiRobot.getRightEncoderCount();
+		scanIndex++;
 
-			}
+		if (scanIndex > (maxScans -1)){
+			scanIndex = 0;
+		}
 
-			for (int i=0;i<4; i++){
-				this->data[scanIndex].irData[i]  = this->data[scanIndex].irData[i] *3/4 +  analogRead(i)/4;
-			}
+		this->data[scanIndex].leftEncoderCount = aiRobot.getLeftEncoderCount();
+		this->data[scanIndex].rightEncocerCount = aiRobot.getRightEncoderCount();
+		time =0;
+	}
+
+		for (int i=0;i<4; i++){
+			this->data[scanIndex].irData[i]  = this->data[scanIndex].irData[i] *3/4 +  analogRead(i)/4;
+		}
+
 
 
 }
@@ -143,17 +142,19 @@ void IRRangers::scan()
 
 	if  ( time >= 40){  //Update Scan Angle
 		currentAngle += DeltaAnglePerUpdate;
-		if (currentAngle >= 180) {
-			currentAngle = 180;
+		if (currentAngle >= maxAngle) {
+			currentAngle = maxAngle;
 			DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
 		}
-		if (currentAngle <=0 ){
-			currentAngle = 0;
+		if (currentAngle <=minAngle ){
+			currentAngle = minAngle;
 			DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
 		}
 
 
 		setServoAngle(currentAngle);
+
+
 		scanIndex++;
 
 		if (scanIndex > (maxScans -1)){
