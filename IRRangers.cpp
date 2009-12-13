@@ -151,10 +151,8 @@ void IRRangers::scan()
 			currentAngle = 0;
 			DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
 		}
-		Serial.print("Millis : ");
-		Serial.print(time);
-		Serial.print("  Angle : ");
-		Serial.println(currentAngle);
+
+
 		setServoAngle(currentAngle);
 		scanIndex++;
 
