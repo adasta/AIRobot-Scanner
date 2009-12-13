@@ -20,7 +20,7 @@ IRRangers::IRRangers() {
 	setServoAngle(0);
 	this->setMinScanAngle(0);
 	this->setMaxScanAngle(180);
-
+	currentAngle = minAngle;
 	setScanRate(90);
 
 	Serial.print("Scan rate : ");
@@ -92,39 +92,41 @@ void IRRangers::ContinousScan()
 }
 //
 void IRRangers::scan2(){
-		static unsigned long pTime;
-		unsigned long  time = millis();
+
+	 static unsigned long pTime ;
+	 unsigned long time = millis();
 
 
+	if  ( (time-pTime) >= 40){  //Update Scan Angle
+		currentAngle += DeltaAnglePerUpdate;
+		if (currentAngle >= maxAngle) {
+			currentAngle = maxAngle;
+			DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
+		}
+		if (currentAngle <=minAngle ){
+			currentAngle = minAngle;
+			DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
+		}
 
-			if ( (time - pTime) >=40){
-						currentAngle += DeltaAnglePerUpdate;
-						if (currentAngle >= maxAngle) {
-							currentAngle = maxAngle;
-							DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
-						}
-						if (currentAngle <=minAngle ){
-							currentAngle = minAngle;
-							DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
-						}
 
-						scanIndex++;
+		setServoAngle(currentAngle);
 
-						if (scanIndex > (maxScans-1)){
-							scanIndex = 0;
-						}
 
-					setServoAngle(currentAngle);
-					pTime = time;
+		scanIndex++;
 
-					this->data[scanIndex].leftEncoderCount = aiRobot.getLeftEncoderCount();
-					this->data[scanIndex].rightEncocerCount = aiRobot.getRightEncoderCount();
+		if (scanIndex > (maxScans -1)){
+			scanIndex = 0;
+		}
 
-			}
+		this->data[scanIndex].leftEncoderCount = aiRobot.getLeftEncoderCount();
+		this->data[scanIndex].rightEncocerCount = aiRobot.getRightEncoderCount();
+		pTime =time;
+	}
 
-			for (int i=0;i<4; i++){
-				this->data[scanIndex].irData[i]  = this->data[scanIndex].irData[i] *3/4 +  analogRead(i)/4;
-			}
+		for (int i=0;i<4; i++){
+			this->data[scanIndex].irData[i]  = this->data[scanIndex].irData[i] *3/4 +  analogRead(i)/4;
+		}
+
 
 
 }
@@ -141,22 +143,22 @@ void IRRangers::scan()
 
 	if  ( time >= 40){  //Update Scan Angle
 		currentAngle += DeltaAnglePerUpdate;
-		if (currentAngle >= 180) {
-			currentAngle = 180;
+		if (currentAngle >= maxAngle) {
+			currentAngle = maxAngle;
 			DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
 		}
-		if (currentAngle <=0 ){
-			currentAngle = 0;
+		if (currentAngle <=minAngle ){
+			currentAngle = minAngle;
 			DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
 		}
-		Serial.print("Millis : ");
-		Serial.print(time);
-		Serial.print("  Angle : ");
-		Serial.println(currentAngle);
+
+
 		setServoAngle(currentAngle);
+
+
 		scanIndex++;
 
-		if (scanIndex > maxScans){
+		if (scanIndex > (maxScans -1)){
 			scanIndex = 0;
 		}
 

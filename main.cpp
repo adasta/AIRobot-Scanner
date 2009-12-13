@@ -20,20 +20,6 @@ for (;;);
 
 }
 
-Servo LFservo;
-Servo RFServo;
-Servo LBServo;
-Servo RBServo;
-
-void setServoAngle(int angle)
-	{
-	RFServo.write(180-angle);
-	LFservo.write(angle);
-	LBServo.write(180-angle);
-	RBServo.write(angle);
-
-	}
-
 
 int main(void)
 {
@@ -51,7 +37,10 @@ int main(void)
 		if (Serial.available()){ // get new byte, parse if neccesary
 
 		}
-		scanner.scan2();
+
+		while(1==1)		{
+			scanner.scan2();
+		}
 
 	}
 
