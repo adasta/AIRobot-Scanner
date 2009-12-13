@@ -34,13 +34,11 @@ int main(void)
 	scanner.setMaxScanAngle(120);
 
 	while(1==1){
-		if (Serial.available()){ // get new byte, parse if neccesary
-
+		if (Serial.available()){ // get new byte, parse if neccesaryp
 		}
-
-		while(1==1)		{
 			scanner.scan2();
-		}
+			_delay_ms(1);
+
 
 	}
 
