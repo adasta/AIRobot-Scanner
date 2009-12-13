@@ -39,7 +39,6 @@ int main(void)
 		//}
 		while(1==1)		{
 			scanner.scan2();
-			_delay_ms(1);
 		}
 
 	}

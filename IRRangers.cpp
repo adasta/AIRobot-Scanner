@@ -93,10 +93,11 @@ void IRRangers::ContinousScan()
 //
 void IRRangers::scan2(){
 
-	 static int time ;
-	 time++;
+	 static unsigned long pTime ;
+	 unsigned long time = millis();
 
-	if  ( time >= 40){  //Update Scan Angle
+
+	if  ( (time-pTime) >= 40){  //Update Scan Angle
 		currentAngle += DeltaAnglePerUpdate;
 		if (currentAngle >= maxAngle) {
 			currentAngle = maxAngle;
@@ -119,7 +120,7 @@ void IRRangers::scan2(){
 
 		this->data[scanIndex].leftEncoderCount = aiRobot.getLeftEncoderCount();
 		this->data[scanIndex].rightEncocerCount = aiRobot.getRightEncoderCount();
-		time =0;
+		pTime =time;
 	}
 
 		for (int i=0;i<4; i++){
