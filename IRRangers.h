@@ -16,7 +16,7 @@
 	int angle;
 	int leftEncoderCount;
 	int rightEncocerCount;
-	int irData[4];
+	uint16_t irData[4];
 };
 
 

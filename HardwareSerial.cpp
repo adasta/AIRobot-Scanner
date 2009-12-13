@@ -204,6 +204,12 @@ void HardwareSerial::write(uint8_t c)
   *_udr = c;
 }
 
+void HardwareSerial::writeInt(uint16_t c)
+{
+	Serial.write(highByte(c));
+	Serial.write(lowByte(c));
+}
+
 // Preinstantiate Objects //////////////////////////////////////////////////////
 
 #if defined(__AVR_ATmega8__)
