@@ -189,7 +189,7 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x3198
+.text           0x00000000     0x31a8
  *(.vectors)
  .vectors       0x00000000       0x68 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm328p.o
                 0x00000000                __vectors
@@ -364,134 +364,134 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
                 0x00001842                map(long, long, long, long, long)
                 0x000018d4                makeWord(unsigned int)
                 0x000018e4                random(long)
- .text          0x00001974       0x58 ./main.o
+ .text          0x00001974       0x68 ./main.o
                 0x00001974                __cxa_pure_virtual
                 0x00001978                main
- .text          0x000019cc      0x10a ./motorcontrol.o
-                0x00001a50                initMotor2
-                0x000019ea                motor2Reverse
-                0x00001aa0                motor1SetSpeed
-                0x00001a62                initMotor1
-                0x00001a02                motor2Forward
-                0x00001a88                motor1Forward
-                0x000019cc                limitSpeedMax
-                0x00001a70                motor1Reverse
-                0x00001a1a                motor2SetSpeed
- .text          0x00001ad6        0x0 ./pins_arduino.o
- .text          0x00001ad6       0x80 ./pwm.o
-                0x00001b18                nonInvertPWM1
-                0x00001b36                nonInvertPWM2
-                0x00001b24                invertPWM2
-                0x00001b4c                dutyCyclePWM2
-                0x00001ad6                initPWM
-                0x00001b42                dutyCyclePWM1
-                0x00001b06                invertPWM1
- .text          0x00001b56      0x1e6 ./wiring.o
-                0x00001cc8                init
-                0x00001c02                micros
-                0x00001c58                delay
-                0x00001b56                __vector_16
-                0x00001be6                millis
-                0x00001cac                delayMicroseconds
- .text          0x00001d3c       0xf4 ./wiring_analog.o
-                0x00001d7e                analogWrite
-                0x00001d3c                analogReference
-                0x00001d42                analogRead
- .text          0x00001e30      0x178 ./wiring_digital.o
-                0x00001f0a                digitalRead
-                0x00001e70                digitalWrite
-                0x00001e30                pinMode
- .text          0x00001fa8      0x102 ./wiring_pulse.o
-                0x00001fa8                pulseIn
- .text          0x000020aa       0x82 ./wiring_shift.o
-                0x000020aa                shiftOut
- .text          0x0000212c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_mulsi3.o)
- .text          0x0000212c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodqi4.o)
- .text          0x0000212c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_divmodhi4.o)
- .text          0x0000212c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodsi4.o)
- .text          0x0000212c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_divmodsi4.o)
- .text          0x0000212c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
- .text          0x0000212c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
- .text          0x0000212c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
- .text          0x0000212c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_ctors.o)
- .text          0x0000212c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_dtors.o)
- .text          0x0000212c       0x58 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_fixunssfsi.o)
-                0x0000212c                __fixunssfsi
- .text          0x00002184      0x354 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_addsub_sf.o)
-                0x0000241c                __subsf3
-                0x0000247e                __addsf3
- .text          0x000024d8      0x1f4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_mul_sf.o)
-                0x000024d8                __mulsf3
- .text          0x000026cc      0x158 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_div_sf.o)
-                0x000026cc                __divsf3
- .text          0x00002824       0x60 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_ge_sf.o)
-                0x00002824                __gesf2
- .text          0x00002884       0x60 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_lt_sf.o)
-                0x00002884                __ltsf2
- .text          0x000028e4       0xbc c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_si_to_sf.o)
-                0x000028e4                __floatsisf
- .text          0x000029a0       0xa8 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_sf_to_si.o)
-                0x000029a0                __fixsfsi
- .text          0x00002a48        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_thenan_sf.o)
- .text          0x00002a48       0xf2 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_usi_to_sf.o)
-                0x00002a48                __floatunsisf
- .text          0x00002b3a        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodhi4.o)
- .text          0x00002b3a        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
- .text          0x00002b3a        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
- .text          0x00002b3a        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_tablejump.o)
- .text          0x00002b3a       0x9e c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clzsi2.o)
-                0x00002b3a                __clzsi2
- .text          0x00002bd8      0x1aa c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_pack_sf.o)
-                0x00002bd8                __pack_f
- .text          0x00002d82       0xf0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_unpack_sf.o)
-                0x00002d82                __unpack_f
- .text          0x00002e72       0xb2 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_fpcmp_parts_sf.o)
-                0x00002e72                __fpcmp_parts_f
- .text          0x00002f24        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clz.o)
- .text          0x00002f24       0xc2 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(random.o)
-                0x00002fca                random
-                0x00002fc4                random_r
-                0x00002fd4                srandom
-                0x00002fe6                . = ALIGN (0x2)
+ .text          0x000019dc      0x10a ./motorcontrol.o
+                0x00001a60                initMotor2
+                0x000019fa                motor2Reverse
+                0x00001ab0                motor1SetSpeed
+                0x00001a72                initMotor1
+                0x00001a12                motor2Forward
+                0x00001a98                motor1Forward
+                0x000019dc                limitSpeedMax
+                0x00001a80                motor1Reverse
+                0x00001a2a                motor2SetSpeed
+ .text          0x00001ae6        0x0 ./pins_arduino.o
+ .text          0x00001ae6       0x80 ./pwm.o
+                0x00001b28                nonInvertPWM1
+                0x00001b46                nonInvertPWM2
+                0x00001b34                invertPWM2
+                0x00001b5c                dutyCyclePWM2
+                0x00001ae6                initPWM
+                0x00001b52                dutyCyclePWM1
+                0x00001b16                invertPWM1
+ .text          0x00001b66      0x1e6 ./wiring.o
+                0x00001cd8                init
+                0x00001c12                micros
+                0x00001c68                delay
+                0x00001b66                __vector_16
+                0x00001bf6                millis
+                0x00001cbc                delayMicroseconds
+ .text          0x00001d4c       0xf4 ./wiring_analog.o
+                0x00001d8e                analogWrite
+                0x00001d4c                analogReference
+                0x00001d52                analogRead
+ .text          0x00001e40      0x178 ./wiring_digital.o
+                0x00001f1a                digitalRead
+                0x00001e80                digitalWrite
+                0x00001e40                pinMode
+ .text          0x00001fb8      0x102 ./wiring_pulse.o
+                0x00001fb8                pulseIn
+ .text          0x000020ba       0x82 ./wiring_shift.o
+                0x000020ba                shiftOut
+ .text          0x0000213c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_mulsi3.o)
+ .text          0x0000213c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodqi4.o)
+ .text          0x0000213c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_divmodhi4.o)
+ .text          0x0000213c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodsi4.o)
+ .text          0x0000213c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_divmodsi4.o)
+ .text          0x0000213c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .text          0x0000213c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .text          0x0000213c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+ .text          0x0000213c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_ctors.o)
+ .text          0x0000213c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_dtors.o)
+ .text          0x0000213c       0x58 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_fixunssfsi.o)
+                0x0000213c                __fixunssfsi
+ .text          0x00002194      0x354 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_addsub_sf.o)
+                0x0000242c                __subsf3
+                0x0000248e                __addsf3
+ .text          0x000024e8      0x1f4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_mul_sf.o)
+                0x000024e8                __mulsf3
+ .text          0x000026dc      0x158 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_div_sf.o)
+                0x000026dc                __divsf3
+ .text          0x00002834       0x60 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_ge_sf.o)
+                0x00002834                __gesf2
+ .text          0x00002894       0x60 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_lt_sf.o)
+                0x00002894                __ltsf2
+ .text          0x000028f4       0xbc c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_si_to_sf.o)
+                0x000028f4                __floatsisf
+ .text          0x000029b0       0xa8 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_sf_to_si.o)
+                0x000029b0                __fixsfsi
+ .text          0x00002a58        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_thenan_sf.o)
+ .text          0x00002a58       0xf2 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_usi_to_sf.o)
+                0x00002a58                __floatunsisf
+ .text          0x00002b4a        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodhi4.o)
+ .text          0x00002b4a        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
+ .text          0x00002b4a        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
+ .text          0x00002b4a        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_tablejump.o)
+ .text          0x00002b4a       0x9e c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clzsi2.o)
+                0x00002b4a                __clzsi2
+ .text          0x00002be8      0x1aa c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_pack_sf.o)
+                0x00002be8                __pack_f
+ .text          0x00002d92       0xf0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_unpack_sf.o)
+                0x00002d92                __unpack_f
+ .text          0x00002e82       0xb2 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_fpcmp_parts_sf.o)
+                0x00002e82                __fpcmp_parts_f
+ .text          0x00002f34        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clz.o)
+ .text          0x00002f34       0xc2 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5\libc.a(random.o)
+                0x00002fda                random
+                0x00002fd4                random_r
+                0x00002fe4                srandom
+                0x00002ff6                . = ALIGN (0x2)
  *(.text.*)
- .text.libgcc   0x00002fe6       0x3e c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_mulsi3.o)
-                0x00002fe6                __mulsi3
- .text.libgcc   0x00003024       0x18 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodqi4.o)
-                0x00003024                __udivmodqi4
- .text.libgcc   0x0000303c       0x26 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_divmodhi4.o)
-                0x0000303c                __divmodhi4
-                0x0000303c                _div
- .text.libgcc   0x00003062       0x44 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodsi4.o)
-                0x00003062                __udivmodsi4
- .text.libgcc   0x000030a6       0x36 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_divmodsi4.o)
-                0x000030a6                __divmodsi4
- .text.libgcc   0x000030dc        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
- .text.libgcc   0x000030dc        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
- .text.libgcc   0x000030dc        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
- .text.libgcc   0x000030dc        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_ctors.o)
- .text.libgcc   0x000030dc        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_dtors.o)
- .text.libgcc   0x000030dc       0x28 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodhi4.o)
-                0x000030dc                __udivmodhi4
- .text.libgcc   0x00003104       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
-                0x00003104                __prologue_saves__
- .text.libgcc   0x0000313c       0x36 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
-                0x0000313c                __epilogue_restores__
- .text.libgcc   0x00003172        0xc c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_tablejump.o)
-                0x00003176                __tablejump__
-                0x00003172                __tablejump2__
-                0x0000317e                . = ALIGN (0x2)
+ .text.libgcc   0x00002ff6       0x3e c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_mulsi3.o)
+                0x00002ff6                __mulsi3
+ .text.libgcc   0x00003034       0x18 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodqi4.o)
+                0x00003034                __udivmodqi4
+ .text.libgcc   0x0000304c       0x26 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_divmodhi4.o)
+                0x0000304c                __divmodhi4
+                0x0000304c                _div
+ .text.libgcc   0x00003072       0x44 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodsi4.o)
+                0x00003072                __udivmodsi4
+ .text.libgcc   0x000030b6       0x36 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_divmodsi4.o)
+                0x000030b6                __divmodsi4
+ .text.libgcc   0x000030ec        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .text.libgcc   0x000030ec        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_copy_data.o)
+ .text.libgcc   0x000030ec        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x000030ec        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_ctors.o)
+ .text.libgcc   0x000030ec        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_dtors.o)
+ .text.libgcc   0x000030ec       0x28 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_udivmodhi4.o)
+                0x000030ec                __udivmodhi4
+ .text.libgcc   0x00003114       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_prologue.o)
+                0x00003114                __prologue_saves__
+ .text.libgcc   0x0000314c       0x36 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_epilogue.o)
+                0x0000314c                __epilogue_restores__
+ .text.libgcc   0x00003182        0xc c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_tablejump.o)
+                0x00003186                __tablejump__
+                0x00003182                __tablejump2__
+                0x0000318e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000317e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
-                0x0000317e                exit
-                0x0000317e                _exit
+ .fini9         0x0000318e        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+                0x0000318e                exit
+                0x0000318e                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
  *(.fini7)
  *(.fini7)
  *(.fini6)
- .fini6         0x0000317e       0x16 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_dtors.o)
-                0x0000317e                __do_global_dtors
+ .fini6         0x0000318e       0x16 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_dtors.o)
+                0x0000318e                __do_global_dtors
  *(.fini6)
  *(.fini5)
  *(.fini5)
@@ -504,11 +504,11 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00003194        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
+ .fini0         0x000031a4        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00003198                _etext = .
+                0x000031a8                _etext = .
 
-.data           0x00800100      0x146 load address 0x00003198
+.data           0x00800100      0x146 load address 0x000031a8
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr5/crtm328p.o
@@ -633,8 +633,8 @@ LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr5\libgcc.a
  *(.bss*)
  *(COMMON)
                 0x0080031e                PROVIDE (__bss_end, .)
-                0x00003198                __data_load_start = LOADADDR (.data)
-                0x000032de                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x000031a8                __data_load_start = LOADADDR (.data)
+                0x000032ee                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x0080031e        0x0
                 0x0080031e                PROVIDE (__noinit_start, .)
@@ -735,6 +735,7 @@ Encoder::~Encoder()                               ./Encoder.o
 HardwareSerial::HardwareSerial(ring_buffer*, unsigned char volatile*, unsigned char volatile*, unsigned char volatile*, unsigned char volatile*, unsigned char volatile*, unsigned char, unsigned char, unsigned char, unsigned char, unsigned char) ./HardwareSerial.o
 HardwareSerial::HardwareSerial(ring_buffer*, unsigned char volatile*, unsigned char volatile*, unsigned char volatile*, unsigned char volatile*, unsigned char volatile*, unsigned char, unsigned char, unsigned char, unsigned char, unsigned char) ./HardwareSerial.o
 HardwareSerial::available()                       ./HardwareSerial.o
+                                                  ./main.o
 HardwareSerial::begin(long)                       ./HardwareSerial.o
                                                   ./main.o
 HardwareSerial::flush()                           ./HardwareSerial.o
