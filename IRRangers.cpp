@@ -18,7 +18,7 @@ IRRangers::IRRangers() {
 	LBServo.attach(4, 500, 2400);//544, 2300);
 	RBServo.attach(2, 544, 2300);
 	setServoAngle(0);
-	this->setMaxScanAngle(0);
+	this->setMinScanAngle(0);
 	this->setMaxScanAngle(180);
 
 	setScanRate(90);
@@ -92,28 +92,41 @@ void IRRangers::ContinousScan()
 }
 //
 void IRRangers::scan2(){
-	static int angle=0;
-			static int direction =0;
-	static unsigned long time;
-	static  unsigned long pTime;
+		static unsigned long pTime;
+		unsigned long  time = millis();
 
-	time = 80;
-	_delay_ms(40);
-	if ((time-pTime) >=40){
-					if (direction ==0) angle = angle +4;
-					else angle = angle -4;
 
-					if (angle >180) {
-						angle = 180;
-						direction =1;
-					}
-					if (angle < 0){
-						direction =0;
-						angle = 0;
-					}
-					setServoAngle(angle);
+
+			if ( (time - pTime) >=40){
+						currentAngle += DeltaAnglePerUpdate;
+						if (currentAngle >= maxAngle) {
+							currentAngle = maxAngle;
+							DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
+						}
+						if (currentAngle <=minAngle ){
+							currentAngle = minAngle;
+							DeltaAnglePerUpdate = DeltaAnglePerUpdate *-1;
+						}
+
+						scanIndex++;
+
+						if (scanIndex > (maxScans-1)){
+							scanIndex = 0;
+						}
+
+					setServoAngle(currentAngle);
+					pTime = time;
+
+					this->data[scanIndex].leftEncoderCount = aiRobot.getLeftEncoderCount();
+					this->data[scanIndex].rightEncocerCount = aiRobot.getRightEncoderCount();
+
 			}
-	pTime = 0;
+
+			for (int i=0;i<4; i++){
+				this->data[scanIndex].irData[i]  = this->data[scanIndex].irData[i] *3/4 +  analogRead(i)/4;
+			}
+
+
 }
 
 
