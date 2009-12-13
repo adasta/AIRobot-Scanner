@@ -8,8 +8,9 @@
 #ifndef IRRANGERS_H_
 #define IRRANGERS_H_
 
-#include "Robot.h"
 #include "Servo.h"
+#include "Robot.h"
+#define maxScans 40
 
  struct scanData{
 	int angle;
@@ -19,24 +20,30 @@
 };
 
 
+
 class IRRangers {
 public:
 	IRRangers();
 	~IRRangers();
-	void setScanRate(int angleDegreesPerSecond);
-		scanData data[100];
-		int numberOfScans;
+		scanData data[maxScans];
+		int scanIndex;
+		void ContinousScan();
 		void scan();
-		void Update();
+		void scan2();
 		void setMaxScanAngle(int degrees);
 		void setMinScanAngle(int degrees);
 		void setServoAngle(int degrees);
+		void setScanRate(int angleDegreesPerSecond);
 	private:
 		 Servo LFservo;
 		 Servo RFServo;
 		 Servo LBServo;
 		 Servo RBServo;
 		 int currentAngle;
+		 int scanRateDegSec;
+		 int minAngle;
+		 int maxAngle;
+		 int DeltaAnglePerUpdate;  //Scan angle is changed every 40 ms
 };
 
 #endif /* IRRANGERS_H_ */

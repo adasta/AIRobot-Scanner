@@ -22,10 +22,10 @@ public:
 private:
 	int LencoderCount;
 	int RencoderCount;;
-
 	int currentLSpeed;
 	int currentRSpeed;
 };
+
 extern Robot aiRobot;
 
 #endif /* ROBOT_H_ */

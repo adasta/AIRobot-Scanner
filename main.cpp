@@ -8,6 +8,7 @@ extern "C"{
 
 #include "Servo.h"
 #include "IRRangers.h"
+#include <avr/delay.h>
 
 extern "C" void __cxa_pure_virtual()
 
@@ -32,39 +33,28 @@ void setServoAngle(int angle)
 	RBServo.write(angle);
 
 	}
-void scan(){
-	int angle=0;
-	int direction =0;
-	while(1==1){
-			setServoAngle(angle);
-			Serial.print(angle);
-			Serial.println(" ");
-			delay(80);
-			if (direction ==0) angle = angle +5;
-			else angle = angle -5;
-
-			if (angle >180) {
-				angle = 180;
-				direction =1;
-			}
-			if (angle < 0){
-				direction =0;
-				angle = 0;
-			}
-	}
-}
 
 
 int main(void)
 {
 	init();
-	Serial.begin(9600);
+	Serial.begin(115200);
 	IRRangers scanner;
 
-	scanner.scan();
+//scanner.ContinousScan();
 
+	//scanner.ContinousScan();
+
+	while(1==1){
+	//	if (Serial.available()){ // get new byte, parse if neccesary
+
+		//}
+		scanner.scan2();
+		_delay_ms(1);
 
 	}
+
+}
 
 
 
