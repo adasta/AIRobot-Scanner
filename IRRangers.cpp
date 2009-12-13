@@ -117,7 +117,7 @@ void IRRangers::scan2(){
 		if (scanIndex > (maxScans -1)){
 			scanIndex = 0;
 		}
-
+		this->data[scanIndex].angle = currentAngle;
 		this->data[scanIndex].leftEncoderCount = aiRobot.getLeftEncoderCount();
 		this->data[scanIndex].rightEncocerCount = aiRobot.getRightEncoderCount();
 		pTime =time;
