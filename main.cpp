@@ -24,8 +24,9 @@ for (;;);
 int main(void)
 {
 	init();
-	Serial.begin(115200);
+	Serial.begin(57600);
 	IRRangers scanner;
+	scanner.setServoAngle(10);
 
 //scanner.ContinousScan();
 
@@ -40,7 +41,9 @@ int main(void)
 
 			if (c ==10){
 					//Printout data
-				int i;
+				int i;\
+				Serial.write(c);  //Send command back
+				Serial.write(scanner.scanIndex+1);  // send scan
 				for ( i=0; i<= scanner.scanIndex; i++){
 				Serial.write(scanner.data[i].angle);
 				Serial.writeInt(scanner.data[i].leftEncoderCount);
